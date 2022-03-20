@@ -10,7 +10,7 @@ namespace LifeBoat_API.Hubs
         public async Task GetSupply(string name)
         {
             Supply supply = _supplyRepository.Get(name);
-            await this.Clients.Caller.SendAsync("SupplyInfo", supply.Name, supply.Description);
+            await this.Clients.Caller.SendAsync("SupplyInfo", supply);
         }
         public async Task GetSupplies() 
         {
